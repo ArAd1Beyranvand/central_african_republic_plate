@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:plate_alphabet/plate_alphabet.dart';
 import 'package:plate_core/plate_core.dart';
 
@@ -47,19 +49,18 @@ abstract final class CentralAfricanRepublicPlates {
       double cx,
       double pitch,
     ) {
-      groups.add(
-        PlateTextGroup(<int>[
-          for (var i = 0; i < count; i++) slots.length + i,
-        ], key: key),
-      );
-      slots.addAll(
-        plateRegister(
+      groups.add(PlateTextGroup(<int>[slots.length], key: key));
+      slots.add(
+        PlateSlot(
           alphabet: alphabet,
-          count: count,
-          left: cx - pitch / 2,
-          top: _Layout.cy - _Layout.box / 2,
-          width: pitch,
-          height: _Layout.box,
+          box: PlateBox(
+            cx - pitch / 2,
+            _Layout.cy - _Layout.box / 2,
+            count * pitch,
+            _Layout.box,
+          ),
+          length: count,
+          spacing: max(0, pitch - 0.6 * 0.72 * _Layout.box),
         ),
       );
     }

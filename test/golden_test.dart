@@ -29,7 +29,7 @@ void main() {
         'private': (
           CentralAfricanRepublicPlates.private,
           CentralAfricanRepublicThemes.private,
-          'B B 5 3 4 D G',
+          'BB 534 DG',
         ),
       };
 

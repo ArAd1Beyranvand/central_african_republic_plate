@@ -4,6 +4,7 @@ import 'package:plate_alphabet/plate_alphabet.dart';
 import 'package:plate_core/plate_core.dart';
 
 import 'central_african_republic_country.dart';
+import 'central_african_republic_regions.dart';
 
 /// Where the ink sits, in plate units.
 ///
@@ -84,6 +85,7 @@ abstract final class CentralAfricanRepublicPlates {
         ),
       ],
       textGroups: groups,
+      resolveRegion: CentralAfricanRepublicRegions.captionOf,
     );
   }
 }

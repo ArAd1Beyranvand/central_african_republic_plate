@@ -1,5 +1,3 @@
-import 'package:plate_core/plate_core.dart';
-
 /// Locates a plate from its two-letter prefecture code.
 ///
 /// Source: the "Registration codes" section of
@@ -35,7 +33,6 @@ abstract final class CentralAfricanRepublicRegions {
     return names.length == 1 ? names.single : null;
   }
 
-  /// A [PlateLabelResolver] for [PlateSpec.resolveRegion].
   static String? captionOf(String Function(String key) group) =>
       lookup(group('prefecture'));
 }

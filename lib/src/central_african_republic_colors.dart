@@ -1,6 +1,5 @@
 import 'package:flutter/widgets.dart';
 
-/// The colours of the Central African plate.
 abstract final class CentralAfricanRepublicColors {
   /// Field, sampled from the flattened photo: `FEFEFE`.
   static const Color white = Color(0xFFFEFEFE);

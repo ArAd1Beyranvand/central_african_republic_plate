@@ -34,7 +34,6 @@ abstract final class _Layout {
 ///
 /// Not implemented: temporary (red, `TA123BV`) and diplomatic (green) plates
 /// and the older black and blue series; the article has no picture of them.
-/// The article names no Israel-specific value.
 abstract final class CentralAfricanRepublicPlates {
   static final PlateSpec private = _spec();
 

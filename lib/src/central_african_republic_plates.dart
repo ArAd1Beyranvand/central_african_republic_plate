@@ -42,23 +42,12 @@ abstract final class CentralAfricanRepublicPlates {
   static PlateSpec _spec() {
     final List<PlateSlot> slots = <PlateSlot>[];
     final List<PlateTextGroup> groups = <PlateTextGroup>[];
-    void run(
-      String key,
-      PlateAlphabet alphabet,
-      int count,
-      double cx,
-      double pitch,
-    ) {
+    void run(String key, PlateAlphabet alphabet, int count, double cx, double pitch) {
       groups.add(PlateTextGroup(<int>[slots.length], key: key));
       slots.add(
         PlateSlot(
           alphabet: alphabet,
-          box: PlateBox(
-            cx - pitch / 2,
-            _Layout.cy - _Layout.box / 2,
-            count * pitch,
-            _Layout.box,
-          ),
+          box: PlateBox(cx - pitch / 2, _Layout.cy - _Layout.box / 2, count * pitch, _Layout.box),
           length: count,
           spacing: max(0, pitch - 0.6 * 0.72 * _Layout.box),
         ),
@@ -77,11 +66,7 @@ abstract final class CentralAfricanRepublicPlates {
       noPanel: true,
       slots: slots,
       labels: const <PlateLabel>[
-        PlateLabel(
-          text: 'RCA',
-          box: _Layout.rca,
-          glyphHeight: _Layout.rcaGlyph,
-        ),
+        PlateLabel(text: 'RCA', box: _Layout.rca, glyphHeight: _Layout.rcaGlyph),
       ],
       textGroups: groups,
       resolveRegion: CentralAfricanRepublicRegions.captionOf,

@@ -24,8 +24,7 @@ void main() {
   });
 
   test('the controller follows each letter typed and deleted', () {
-    final PlateController c =
-        PlateController(spec: CentralAfricanRepublicPlates.private);
+    final PlateController c = PlateController(spec: CentralAfricanRepublicPlates.private);
     expect(c.regionCaption, isNull);
     c.setGroup('prefecture', 'H');
     expect(c.regionCaption, isNull);

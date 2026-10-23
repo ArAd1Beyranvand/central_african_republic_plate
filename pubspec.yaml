@@ -1,7 +1,7 @@
 name: central_african_republic_plate
 description: "Central African Republic's licence plates for the plate_core library: the black-on-white CEMAC plate, a theme, alphabets and an advisory validator."
 version: 0.1.0
-publish_to: none
+repository: https://github.com/ArAd1Beyranvand/central_african_republic_plate
 resolution: workspace
 
 environment:

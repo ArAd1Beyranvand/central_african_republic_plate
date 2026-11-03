@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:plate_alphabet/plate_alphabet.dart';
 import 'package:plate_core/plate_core.dart';
 
@@ -20,9 +18,7 @@ import 'central_african_republic_regions.dart';
 /// ~150-unit box, so the box is capped at [box] and the ink lands near 65%.
 /// The CEMAC emblem is left blank: no vector is published.
 abstract final class _Layout {
-  static const double width = 520, height = 110;
-  static const double box = 104;
-  static const double cy = 56.4;
+  static const double width = 520, height = 110, box = 104, cy = 56.4;
 
   static const PlateBox rca = PlateBox(22, 66, 48, 34);
   static const double rcaGlyph = 44;
@@ -41,7 +37,6 @@ abstract final class CentralAfricanRepublicPlates {
 
   static PlateSpec _spec() {
     final List<PlateSlot> slots = <PlateSlot>[];
-    final List<PlateTextGroup> groups = <PlateTextGroup>[];
     void run(
       String key,
       PlateAlphabet alphabet,
@@ -49,18 +44,15 @@ abstract final class CentralAfricanRepublicPlates {
       double cx,
       double pitch,
     ) {
-      groups.add(PlateTextGroup(<int>[slots.length], key: key));
       slots.add(
-        PlateSlot(
-          alphabet: alphabet,
-          box: PlateBox(
-            cx - pitch / 2,
-            _Layout.cy - _Layout.box / 2,
-            count * pitch,
-            _Layout.box,
-          ),
-          length: count,
-          spacing: max(0, pitch - 0.6 * 0.72 * _Layout.box),
+        plateRun(
+          alphabet,
+          count,
+          left: cx - pitch / 2,
+          top: _Layout.cy - _Layout.box / 2,
+          pitch: pitch,
+          height: _Layout.box,
+          group: key,
         ),
       );
     }
@@ -73,8 +65,6 @@ abstract final class CentralAfricanRepublicPlates {
       country: CentralAfricanRepublicCountry.centralAfricanRepublic,
       canvasWidth: _Layout.width,
       canvasHeight: _Layout.height,
-      panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
-      noPanel: true,
       slots: slots,
       labels: const <PlateLabel>[
         PlateLabel(
@@ -83,7 +73,6 @@ abstract final class CentralAfricanRepublicPlates {
           glyphHeight: _Layout.rcaGlyph,
         ),
       ],
-      textGroups: groups,
       resolveRegion: CentralAfricanRepublicRegions.captionOf,
     );
   }

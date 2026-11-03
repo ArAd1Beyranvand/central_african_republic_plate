@@ -7,7 +7,6 @@ import 'central_african_republic_colors.dart';
 abstract final class CentralAfricanRepublicCountry {
   static const PlateCountry centralAfricanRepublic = PlateCountry(
     code: 'cf',
-    captionLines: <String>[],
     panelColor: CentralAfricanRepublicColors.white,
     panelTextColor: CentralAfricanRepublicColors.black,
   );

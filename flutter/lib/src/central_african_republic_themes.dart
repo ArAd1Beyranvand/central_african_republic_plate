@@ -8,7 +8,6 @@ abstract final class CentralAfricanRepublicThemes {
   static final PlateTheme private = PlateTheme.monochrome(
     field: CentralAfricanRepublicColors.white,
     ink: CentralAfricanRepublicColors.black,
-    inactive: CentralAfricanRepublicColors.inactive,
     borderWidthRatio: 0.02,
     plateRadiusRatio: 0.04,
   );
